@@ -63,23 +63,3 @@ abstract class TaskFactory {
       this.observers.forEach((observer) => observer.update(task));
     }
   }
-
-  
-  abstract class TaskDecorator implements Task {
-    constructor(protected task: Task) {}
-  
-    abstract getDescription(): string;
-  }
-  
-  class PriorityTask extends TaskDecorator {
-    getDescription(): string {
-      return `Priority Task: ${this.task.getDescription()}`;
-    }
-  }
-  
-  class ReminderTask extends TaskDecorator {
-    getDescription(): string {
-      return `Reminder Task: ${this.task.getDescription()}`;
-    }
-  }
-  
