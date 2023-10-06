@@ -71,7 +71,7 @@ const expectedUsers = [
 
 const tooManyUsers = users.concat(users).concat(users);
 
-export function transformUsers(users) {
+function transformUsers(users) {
     if (!Array.isArray(users)) {
         throw new Error("Users must be provided.");
     }
@@ -79,10 +79,6 @@ export function transformUsers(users) {
     if (users.length > 10) { 
         throw new Error("Too many users provided.");
     }
-  
-    if (users.length > maxUsers) {
-        throw new Error("Too many users provided.");
-      }
   
     const transformedUsers = users.map(user => ({
         id: user.id,
