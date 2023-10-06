@@ -31,4 +31,4 @@ const calculateFactorial = (n) => {
     return result;
 }
 
-module.exports = { add, multiplyArray, calculateFactorial };
+module.exports = { add, multiplyArray, calculateFactorial, transformUsers };
