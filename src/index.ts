@@ -16,15 +16,15 @@ abstract class TaskFactory {
     abstract createTask(description: string): Task;
   }
   
-  class SimpleTaskFactory extends TaskFactory {
+  class PersonnelTaskFactory extends TaskFactory {
     createTask(description: string): Task {
-      return new SimpleTask(description);
+      return new PersonnelTask(description);
     }
   }
   
   class ComplexTaskFactory extends TaskFactory {
     createTask(description: string): Task {
-      return new ComplexTask(description);
+      return new UrgentTask(description);
     }
   }
   
@@ -32,7 +32,7 @@ abstract class TaskFactory {
     getDescription(): string;
   }
   
-  class SimpleTask implements Task {
+  class PersonnelTask implements Task {
     constructor(private description: string) {}
   
     getDescription(): string {
@@ -40,7 +40,7 @@ abstract class TaskFactory {
     }
   }
   
-  class ComplexTask implements Task {
+  class UrgentTask implements Task {
     constructor(private description: string) {}
   
     getDescription(): string {
